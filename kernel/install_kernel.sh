@@ -31,5 +31,6 @@ if [ ! -f $BOOT_DIR/dts/$dtb ]; then
 fi
 
 cp -i $BOOT_DIR/zImage $MPOINT/boot || exit 1
-cp -i $BOOT_DIR/dts/$dtb $MPOINT/boot
+cp -i $BOOT_DIR/dts/$dtb $MPOINT/boot || exit 1
 
+print_ok "kernel is installed successfully\n";

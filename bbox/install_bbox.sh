@@ -11,9 +11,6 @@ if [ $? -ne 0 ]; then
 	exit 1;
 fi
 
-#umount $SD_DEV 1>/dev/null 2>&1 || exit 1
-#mount $SD_DEV $MPOINT || exit 1
-
 # check mount point
 check_mount_point;
 if [ $? -ne 0 ]; then

@@ -16,5 +16,6 @@ if [ $? -ne 0 ]; then
 	exit 1;
 fi
 
-make ARCH=$ARCH CROSS_COMPILE=$CROSS_COMPILE INSTALL_MOD_PATH=$BBOX_DIR/bbox modules_install
-
+export PATH=$PATH:/home/bob/opt/armv7-eabihf--glibc--stable/bin
+make ARCH=$ARCH CROSS_COMPILE=$CROSS_COMPILE INSTALL_MOD_PATH=$BBOX_DIR/bbox modules_install || exit 1
+print_ok "modules are installed successfully\n";
