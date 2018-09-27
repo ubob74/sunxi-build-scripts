@@ -1,14 +1,14 @@
 * Clone kernel, u-boot and build scripts git repos:
- - https://github.com/linux-sunxi/linux-sunxi.git:sunxi-next
- - git://git.denx.de/u-boot.git
- - https://github.com/ubob74/sunxi-build-scripts.git 
+  * https://github.com/linux-sunxi/linux-sunxi.git:sunxi-next
+  * git://git.denx.de/u-boot.git
+  * https://github.com/ubob74/sunxi-build-scripts.git 
 
 * Edit sunxirc config file in build scripts dir and set required variables.
 
 * Prepare SD card:
   * format it to vfat
-  * create /boot dir (mkdir /boot)
   * mount to MPOINT
+  * create /boot dir (mkdir /boot)
 
 * Prepare busybox - copy bbox/newrootfs.img.gz to $BBOX_DIR dir and unpack it:
 ```
