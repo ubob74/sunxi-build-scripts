@@ -24,22 +24,22 @@ function check_root_permission()
 
 function check_mount_point()
 {
-	unset SD_DEV
-	SD_DEV=`mount | grep $MPOINT | awk '{print $1}'`
-	if [ -z $SD_DEV ]; then
-		print_err "Device is not mounted\n";
-		return 1;
-	fi
+	export SD_DEV="/dev/uc1"
+
 	test -b $SD_DEV;
 	if [ $? -ne 0 ]; then
-		print_err "Device is not mounted\n";
+		print_err "Device is not present\n";
 		return 1;
 	fi
-	export SD_DEV
+
+	mount $SD_DEV $MPOINT
+	if [ [ $? -ne 0] && [ $? -ne 32 ] ]; then
+		print_err "Can't mount /dev/uc1";
+		return 1;
+	fi
 
 	if [ ! -d $MPOINT/boot ]; then
 		print_err "Invalid moint point (no boot/ dir)\n";
 		return 1;
 	fi
 }
-
