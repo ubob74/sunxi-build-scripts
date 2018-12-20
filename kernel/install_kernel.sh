@@ -15,7 +15,7 @@ if [ $? -ne 0 ]; then
 fi
 
 BOOT_DIR=arch/arm/boot
-dtb=`basename $SUNXI_H2_PLUS_ZERO_DTB`
+dtb=`basename $SUNXI_DTB`
 cd $SUNXI_KERNEL || exit 1
 
 printf "Device tree file: %s\n" $dtb

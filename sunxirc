@@ -9,7 +9,7 @@ export SUNXI_HOME=$HOME/ARM/orange
 
 # kernel env
 export SUNXI_KERNEL=$SUNXI_HOME/kernel/linux-sunxi
-export SUNXI_H2_PLUS_ZERO_DTB=$SUNXI_KERNEL/arch/arm/boot/dts/sun8i-h2-plus-orangepi-zero.dtb
+export SUNXI_DTB=$SUNXI_KERNEL/arch/arm/boot/dts/sun8i-h2-plus-orangepi-zero.dtb
 export SUNXI_KERNEL_DEFCONFIG=sunxi_defconfig
 
 # busybox env

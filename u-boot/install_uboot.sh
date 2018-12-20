@@ -21,7 +21,7 @@ test -f $UBOOT_DIR/u-boot-sunxi-with-spl.bin || {
 
 printf "ok\n"
 
-dtb=`basename $SUNXI_H2_PLUS_ZERO_DTB`
+dtb=`basename $SUNXI_DTB`
 
 find . -name boot\.cmd -exec rm -i {} \;
 
@@ -34,6 +34,4 @@ printf "bootz 0x44000000 0x48000000 0x46000000\n" >> ./boot.cmd
 $UBOOT_DIR/tools/mkimage -C none -A arm -T script -d ./boot.cmd ./boot.scr || exit 1
 
 cp -i ./boot.scr $MPOINT/boot || exit 1
-
-dd if=$UBOOT_DIR/u-boot-sunxi-with-spl.bin of=$SD_DEV bs=1024 seek=8
 
