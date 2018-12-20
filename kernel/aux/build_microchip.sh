@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. ../sunxirc
+. ../../sunxirc
 
 cd $SUNXI_KERNEL || exit 1
 

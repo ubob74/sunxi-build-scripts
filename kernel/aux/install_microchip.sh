@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. ../sunxirc
+. ../../sunxirc
 
 source ../common.sh
 
