@@ -1,0 +1,2 @@
+KERNEL=="sd*", ACTION=="add", SUBSYSTEMS=="usb", ATTRS{idProduct}=="6366", ATTRS{idVendor}=="058f", SYMLINK+="uc%n", OPTIONS+="all_partitions"
+ACTION=="remove", SUBSYSTEMS=="usb", ATTRS{idProduct}=="6366", ATTRS{idVendor}=="058f", RUN+="umount /dev/uc1 && rm /dev/uc1 && rm /dev/uc"
