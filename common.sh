@@ -34,12 +34,12 @@ function check_mount_point()
 
 	mount $SD_DEV $MPOINT
 	if [ [ $? -ne 0] && [ $? -ne 32 ] ]; then
-		print_err "Can't mount /dev/uc1";
+		print_err "Can't mount flash partition";
 		return 1;
 	fi
 
 	if [ ! -d $MPOINT/boot ]; then
-		print_err "Invalid moint point (no boot/ dir)\n";
+		print_err "Can't find boot/ directory - invalid mount point\n";
 		return 1;
 	fi
 }

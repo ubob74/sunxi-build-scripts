@@ -1,0 +1,39 @@
+#!/bin/sh
+
+# sunxi global env
+if [ ! `id -u` -ne 0 ]; then
+	export HOME=/home/bob
+fi
+
+ARM_TOOLS_DIR=opt/arm/bin
+
+export PATH=$PATH:$HOME/$ARM_TOOLS_DIR
+export SUNXI_HOME=$HOME/ARM/orange
+
+# kernel env
+export SUNXI_KERNEL=$SUNXI_HOME/kernel/linux-sunxi
+export SUNXI_DTB=$SUNXI_KERNEL/arch/arm/boot/dts/sun8i-h2-plus-orangepi-zero.dtb
+export SUNXI_KERNEL_DEFCONFIG=sunxi_defconfig
+
+# busybox env
+export BBOX_DIR=$SUNXI_HOME/busybox
+
+# initial ramfs image (ramdisk)
+export INITRAMFS=initramfs.img
+
+# u-boot env
+export UBOOT_DIR=$SUNXI_HOME/uboot/u-boot-mainline
+export UBOOT_DEFCONFIG=orangepi_zero_defconfig
+
+# compiler env
+export ARCH=arm
+export CROSS_COMPILE=arm-buildroot-linux-gnueabihf-
+
+# main credentials
+USER=bob
+GROUP=users
+export MAIN_CRED="$USER:$GROUP"
+
+# mount point
+export MPOINT=/mnt/sddev
+

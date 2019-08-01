@@ -16,5 +16,5 @@ test -f $UBOOT_DIR/u-boot-sunxi-with-spl.bin || {
 
 printf "ok\n"
 
-dd if=$UBOOT_DIR/u-boot-sunxi-with-spl.bin of=/dev/sdc bs=1024 seek=8
+dd if=$UBOOT_DIR/u-boot-sunxi-with-spl.bin of=/dev/uc bs=1024 seek=8
 

@@ -14,8 +14,6 @@ if [ $? -ne 0 ]; then
 	exit 1;
 fi
 
-export PATH=$PATH:$HOME/opt/armv7-eabihf--glibc--stable/bin
-
 dtb=`basename $SUNXI_DTB`
 
 cd $SUNXI_KERNEL || exit 1
